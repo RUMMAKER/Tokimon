@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grade Calculator</title>
+  <link rel="stylesheet" type="text/css" href="calculator.css">
+  <script src="calculator.js"></script>
+</head>
+<body>
+  <div>
+  <div id="top_bar"></div>
+  <div id="big_container">
+  <p id="page_title">Grade Calculator</p>
+    <div id="app_container">
+
+      <p class="red_title">Activities</p>
+      <p id="app_description">Give grades to the current activities:</p>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Short Name</th>
+          <th>Weight</th>
+          <th>Grade</th>
+          <th>Percent</th>
+          <th>Add Row<button class="add_button" type="button" onclick="addTableRow()">+</button></th>
+        </tr>
+      </table>
+      <p class="red_title">Result</p>
+
+      <div id="answer_div">
+        <div class="right">
+          <button class="result_button" type="button" onclick="calculateWeighted()">WEIGHTED</button>
+          <button class="result_button" type="button" onclick="calculateMean()">MEAN</button>
+        </div>
+        <div class="left"> <p id="answer"></p> </div>
+      </div>
+      
+    </div>
+  </div>
+  <div id="bot_bar"></div>
+  </div>
+</body>
+</html>
