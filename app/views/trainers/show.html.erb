@@ -10,10 +10,15 @@
   <%= @trainer.level %>
 </p>
 
-<% @trainer.tokimons.each do |tokimon| %>
-	<br>
-	<p><%= tokimon.name %></p>
-<% end %>
+<p>
+  <strong>Attacks:</strong>
+  <%= @trainer.attacks %>
+</p>
+
+<p>
+  <strong>Survived:</strong>
+  <%= @trainer.survived %>
+</p>
 
 <%= link_to 'Edit', edit_trainer_path(@trainer) %> |
 <%= link_to 'Back', trainers_path %>

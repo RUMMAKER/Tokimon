@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tokimons
+  resources :trainers
   resources :trainers
   resources :tokimons
   match ':controller(/:action(/:id))',  :via  =>  :get

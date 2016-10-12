@@ -3,9 +3,11 @@
 one:
   name: MyString
   level: 1
-  money: 1
+  attacks: 1
+  survived: 1
 
 two:
   name: MyString
   level: 1
-  money: 1
+  attacks: 1
+  survived: 1

@@ -3,7 +3,8 @@ class CreateTrainers < ActiveRecord::Migration
     create_table :trainers do |t|
       t.string :name
       t.integer :level
-      t.integer :money
+      t.integer :attacks
+      t.integer :survived
 
       t.timestamps null: false
     end

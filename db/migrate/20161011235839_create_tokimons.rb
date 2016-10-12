@@ -4,14 +4,12 @@ class CreateTokimons < ActiveRecord::Migration
       t.string :name
       t.integer :weight
       t.integer :height
-      t.integer :health
-      t.integer :maxhealth
       t.integer :fly
       t.integer :fight
       t.integer :fire
       t.integer :water
       t.integer :electric
-      t.integer :freeze
+      t.integer :ice
       t.integer :total
 
       t.timestamps null: false

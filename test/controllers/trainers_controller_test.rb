@@ -18,7 +18,7 @@ class TrainersControllerTest < ActionController::TestCase
 
   test "should create trainer" do
     assert_difference('Trainer.count') do
-      post :create, trainer: { level: @trainer.level, money: @trainer.money, name: @trainer.name }
+      post :create, trainer: { attacks: @trainer.attacks, level: @trainer.level, name: @trainer.name, survived: @trainer.survived }
     end
 
     assert_redirected_to trainer_path(assigns(:trainer))
@@ -35,7 +35,7 @@ class TrainersControllerTest < ActionController::TestCase
   end
 
   test "should update trainer" do
-    patch :update, id: @trainer, trainer: { level: @trainer.level, money: @trainer.money, name: @trainer.name }
+    patch :update, id: @trainer, trainer: { attacks: @trainer.attacks, level: @trainer.level, name: @trainer.name, survived: @trainer.survived }
     assert_redirected_to trainer_path(assigns(:trainer))
   end
 
