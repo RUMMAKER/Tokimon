@@ -15,6 +15,7 @@ class TokimonsController < ApplicationController
   # GET /tokimons/new
   def new
     @tokimon = Tokimon.new
+    @tokimon.trainer_id = params[:id]
   end
 
   # GET /tokimons/1/edit

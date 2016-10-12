@@ -1,28 +1,48 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @trainer.name %></title>
+  <link rel="stylesheet" type="text/css" href="calculator.css">
+  <script src="calculator.js"></script>
+</head>
+<body>
+  <div>
+  <div id="top_bar"></div>
+  <div id="big_container">
+  <p id="notice"><%= notice %></p>
+  <p id="page_title"><%= @trainer.name %></p>
+    <div id="app_container">
+      <p class="red_title">Level: <%= @trainer.level %> | <%= @trainer.attacks %> Attacks Initiated | <%= @trainer.survived %> Attacks Survived</p>
+      <table>
 
-<p>
-  <strong>Name:</strong>
-  <%= @trainer.name %>
-</p>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>View</th>
+            <th>Mutate</th>
+            <th><%= link_to 'New Tokimon', new_tokimon_path(:id => @trainer.id) %></th>
+          </tr>
+        </thead>
 
-<p>
-  <strong>Level:</strong>
-  <%= @trainer.level %>
-</p>
+        <tbody>
+          <% @trainer.tokimons.each do |tokimon| %>
+            <tr>
+              <td><%= tokimon.name %></td>
+              <td><%= link_to 'View', tokimon %></td>
+              <td><%= link_to 'Mutate', edit_tokimon_path(tokimon) %></td>
+              <td><%= link_to 'Euthanize', tokimon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
 
-<p>
-  <strong>Attacks:</strong>
-  <%= @trainer.attacks %>
-</p>
-
-<p>
-  <strong>Survived:</strong>
-  <%= @trainer.survived %>
-</p>
-
-<% @trainer.tokimons.each do |tokimon| %>
-  <p><%= tokimon.name %></p>
-<% end %>
+      </table>
+      </div> 
+    </div>
+  </div>
+  <div id="bot_bar"></div>
+  </div>
+</body>
+</html>
 
 <%= link_to 'Edit', edit_trainer_path(@trainer) %> |
 <%= link_to 'Back', trainers_path %>
