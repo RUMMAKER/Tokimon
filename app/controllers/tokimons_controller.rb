@@ -15,7 +15,7 @@ class TokimonsController < ApplicationController
   # GET /tokimons/new
   def new
     @tokimon = Tokimon.new
-    @tokimon.trainer_id = params[:id]
+    @tokimon.trainer_id = params[:id].to_i
   end
 
   # GET /tokimons/1/edit
@@ -26,7 +26,7 @@ class TokimonsController < ApplicationController
   # POST /tokimons.json
   def create
     @tokimon = Tokimon.new(tokimon_params)
-
+    @tokimon.total = @tokimon[:weight].to_i + @tokimon[:height].to_i + @tokimon[:fly].to_i + @tokimon[:fight].to_i + @tokimon.fire.to_i + @tokimon.water.to_i + @tokimon.electric.to_i + @tokimon.ice.to_i
     respond_to do |format|
       if @tokimon.save
         format.html { redirect_to @tokimon, notice: 'Tokimon was successfully created.' }
