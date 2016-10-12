@@ -1,3 +1,131 @@
 // Place all the styles related to the Trainers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html, body {
+	margin: 0 !important;
+    background-color: #a30026;
+    padding-left: 1.5em;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-color: #c4c4c4;
+}
+
+table {
+	width: 100%;
+}
+
+th {
+	text-align: left;
+	background-color: #d6d6d6;
+}
+
+th, td {
+	padding: 0.3em;
+	width: 10em;
+}
+
+#top_bar {
+	min-width: 49em;
+	float: left;
+	width: 90%;
+	height: 0em;
+	background-color: #333333;
+	padding: 1em;
+}
+#bot_bar {
+	min-width: 49em;
+	float: left;
+	width: 90%;
+	height: 1em;
+	background-color: #333333;
+	padding: 1em;
+}
+
+#big_container {
+	min-width: 49em;
+	float: left;
+	width: 90%;
+	padding: 1em;
+	background-color: white;
+}
+
+#app_container {
+	padding: 0.5em;
+	float: left;
+	background-color: #dce8e5; /*light green-blue */
+}
+
+#page_title {
+	text-align: left;
+	font-family: Arial;
+	font-size: 2em;
+	font-style: bold;
+}
+
+.red_title {
+	text-align: left;
+	font-family: Arial;
+	font-size: 1.4em;
+	font-style: bold;
+	color: #a30026;
+}
+
+#app_description {
+	text-align: left;
+	font-family: Arial;
+	font-size: 1em;
+}
+
+#answer {
+	color: #a30026;
+	font-family: Arial;
+	font-size: 2em;
+	margin-top: 0em;
+}
+
+#answer_div {
+	height: 2em;
+	width: 100%;
+	display: inline-block;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+
+
+.result_button {
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+	float:right;
+	background-color: #a30026; /* dark red */
+    border: none;
+    color: white;
+    padding: 0.5em 0.5em;
+    width: 7em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 0.2em;
+}
+
+.add_button {
+	width: 1.3em;
+	height: 1.3em;
+	float: right;
+	background-color: #a30026; /* dark red */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 0.2em;
+}

@@ -11,25 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161011235839) do
+ActiveRecord::Schema.define(version: 20161012002124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "people", force: :cascade do |t|
-    t.string   "pname"
-    t.integer  "age"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "things", force: :cascade do |t|
-    t.string   "tname"
-    t.text     "description"
-    t.integer  "person_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
 
   create_table "tokimons", force: :cascade do |t|
     t.string   "name"
@@ -42,6 +27,7 @@ ActiveRecord::Schema.define(version: 20161011235839) do
     t.integer  "electric"
     t.integer  "ice"
     t.integer  "total"
+    t.integer  "trainer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -53,14 +39,6 @@ ActiveRecord::Schema.define(version: 20161011235839) do
     t.integer  "survived"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "widgets", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "stock"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
 end

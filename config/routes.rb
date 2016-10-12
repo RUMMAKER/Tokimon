@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :tokimons
+  resources :tokimons
   resources :trainers
   resources :trainers
   resources :tokimons

@@ -20,5 +20,9 @@
   <%= @trainer.survived %>
 </p>
 
+<% @trainer.tokimons.each do |tokimon| %>
+  <p><%= tokimon.name %></p>
+<% end %>
+
 <%= link_to 'Edit', edit_trainer_path(@trainer) %> |
 <%= link_to 'Back', trainers_path %>
