@@ -43,6 +43,7 @@ class TokimonsController < ApplicationController
   def update
     respond_to do |format|
       if @tokimon.update(tokimon_params)
+        @tokimon.update(:total => @tokimon[:weight].to_i + @tokimon[:height].to_i + @tokimon[:fly].to_i + @tokimon[:fight].to_i + @tokimon.fire.to_i + @tokimon.water.to_i + @tokimon.electric.to_i + @tokimon.ice.to_i)
         format.html { redirect_to @tokimon, notice: 'Tokimon was successfully updated.' }
         format.json { render :show, status: :ok, location: @tokimon }
       else
