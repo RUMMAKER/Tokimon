@@ -7,8 +7,9 @@
   <div>
   <div id="big_container">
   <p id="page_title"><%= @trainer.name %></p>
+  <p class="red_title">Level: <%= @trainer.level %> | Attacks Initiated: <%= @trainer.attacks %> | Attacks Survived: <%= @trainer.survived %> </p>
     <div id="app_container">
-      <p class="red_title">Level: <%= @trainer.level %> | Attacks Initiated: <%= @trainer.attacks %> | Attacks Survived: <%= @trainer.survived %> </p>
+      <p class="red_title"><%= @trainer.name %>'s Tokimons:</p>
       <table>
 
         <thead>
@@ -16,6 +17,7 @@
             <th>Name</th>
             <th>View</th>
             <th>Mutate</th>
+            <th>Send to attack</th>
             <th><%= link_to 'New Tokimon', new_tokimon_path(:id => @trainer.id) %></th>
           </tr>
         </thead>
@@ -26,6 +28,9 @@
               <td><%= tokimon.name %></td>
               <td><%= link_to 'View', tokimon %></td>
               <td><%= link_to 'Mutate', edit_tokimon_path(tokimon) %></td>
+              <td>
+                <%= link_to 'Attack', trainers_attack_path(:enemy => 5, :tokimon => tokimon.id) %>
+              </td>
               <td><%= link_to 'Euthanize', tokimon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>

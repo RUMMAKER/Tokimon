@@ -61,6 +61,13 @@ class TrainersController < ApplicationController
     end
   end
 
+  # GET /trainers/attack
+  def attack
+    @tokimon = Tokimon.find(params[:tokimon])
+    @enemy = Trainer.find(params[:enemy])
+    #use tokimon to attack enemy
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_trainer

@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  resources :tokimons
+  get 'trainers/attack', to: 'trainers#attack'
   resources :tokimons
   resources :trainers
-  resources :trainers
-  resources :tokimons
+
   match ':controller(/:action(/:id))',  :via  =>  :get
   match ':controller(/:action(/:id))',  :via  =>  :post
 
