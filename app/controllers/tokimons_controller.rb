@@ -31,6 +31,8 @@ class TokimonsController < ApplicationController
       if @tokimon.save
         format.html { redirect_to @tokimon, notice: 'Tokimon was successfully created.' }
         format.json { render :show, status: :created, location: @tokimon }
+        @trainer = Trainer.find(@tokimon.trainer_id)
+        @trainer.update(:level => @trainer.tokimons.size)
       else
         format.html { render :new }
         format.json { render json: @tokimon.errors, status: :unprocessable_entity }
@@ -58,6 +60,8 @@ class TokimonsController < ApplicationController
   def destroy
     @tokimon.destroy
     respond_to do |format|
+      @trainer = Trainer.find(@tokimon.trainer_id)
+      @trainer.update(:level => @trainer.tokimons.size)
       format.html { redirect_to tokimons_url, notice: 'Tokimon was successfully destroyed.' }
       format.json { head :no_content }
     end
