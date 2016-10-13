@@ -2,12 +2,9 @@
 <html>
 <head>
   <title>Listing Trainers</title>
-  <link rel="stylesheet" type="text/css" href="calculator.css">
-  <script src="calculator.js"></script>
 </head>
 <body>
   <div>
-  <div id="top_bar"></div>
   <div id="big_container">
   <p id="page_title">Listing Trainers</p>
     <div id="app_container">
@@ -20,18 +17,18 @@
             <th>Level</th>
             <th>View</th>
             <th>Modify</th>
-            <th><%= link_to 'New Trainer', new_trainer_path %></th>
+            <th><%= link_to 'Hire New Trainer', new_trainer_path %></th>
           </tr>
         </thead>
 
         <tbody>
           <% @trainers.each do |trainer| %>
             <tr>
-              <td><%= trainer.name %></td>
+              <td><%= trainer.name %> (<%= trainer.id %>)</td>
               <td><%= trainer.level %></td>
               <td><%= link_to 'View', trainer %></td>
               <td><%= link_to 'Modify', edit_trainer_path(trainer) %></td>
-              <td><%= link_to 'Destroy', trainer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to 'Execute Trainer', trainer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>

@@ -27,13 +27,20 @@ th, td {
 	width: 10em;
 }
 
+#top_bar a:link,
+#top_bar a:visited,
+#top_bar a:hover {
+   color: white;
+}
+
 #top_bar {
 	min-width: 49em;
 	float: left;
 	width: 90%;
-	height: 0em;
+	height: 2em;
 	background-color: #333333;
-	padding: 1em;
+	padding-left: 1em;
+	padding-top: 0.3em;
 }
 #bot_bar {
 	min-width: 49em;

@@ -10,6 +10,9 @@
   <%= stylesheet_link_tag "application" %>
 </head>
 <body>
+<div id="top_bar">
+	<p><%= link_to 'Trainer List', trainers_path %> | <%= link_to 'Tokimon List', tokimons_path %></p>
+</div>
 <%= yield %>
 <body>
 </html>
