@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'trainers/attack', to: 'trainers#attack'
+  post 'trainers/attack', to: 'trainers#attack'
+  get 'trainers/fail_attack', to: 'trainers#fail_attack'
+  get 'trainers/succ_attack', to: 'trainers#succ_attack'
   resources :tokimons
   resources :trainers
 

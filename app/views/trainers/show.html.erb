@@ -29,7 +29,12 @@
               <td><%= link_to 'View', tokimon %></td>
               <td><%= link_to 'Mutate', edit_tokimon_path(tokimon) %></td>
               <td>
-                <%= link_to 'Attack', trainers_attack_path(:enemy => 5, :tokimon => tokimon.id) %>
+                <%= form_tag({ controller: 'trainers', action: 'attack' }, method: 'post') do %>
+                  <%= select_tag 'target', options_for_select(Trainer.where.not(id: @trainer.id).collect {|p| [ p.name + ' (' + p.id.to_s + ')', p.id ] }), required: true %>
+                  <%= hidden_field_tag :tokimon_id, tokimon.id %>
+                  <%= hidden_field_tag :trainer, @trainer.id %>
+                  <%= submit_tag "Attack" %>
+                <% end %>
               </td>
               <td><%= link_to 'Euthanize', tokimon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>

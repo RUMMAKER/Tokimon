@@ -61,11 +61,33 @@ class TrainersController < ApplicationController
     end
   end
 
-  # GET /trainers/attack
+  # Post /trainers/attack
   def attack
-    @tokimon = Tokimon.find(params[:tokimon])
-    @enemy = Trainer.find(params[:enemy])
-    #use tokimon to attack enemy
+    @trainer = Trainer.find(params[:trainer])
+    @enemy = Trainer.find(params[:target])
+    @tokimon = Tokimon.find(params[:tokimon_id])
+    @name = @tokimon.name
+    @enemy_name = @enemy.name
+    @trainer.update(:attacks => (@trainer.attacks.to_i + 1))
+    if @enemy.tokimons.blank? || @enemy.tokimons.maximum("total") < @tokimon.total
+      @enemy.destroy
+      redirect_to trainers_succ_attack_path(:target => @enemy_name, :tokimon => @name)
+    else
+      @enemy.update(:survived => (@enemy.survived.to_i + 1))
+      @tokimon.destroy
+      redirect_to trainers_fail_attack_path(:target => @enemy_name, :tokimon => @name)
+    end
+  end
+
+  # Get
+  def fail_attack
+    @enemy = params[:target]
+    @tokimon = params[:tokimon]
+  end
+
+  def succ_attack
+    @enemy = params[:target]
+    @tokimon = params[:tokimon]
   end
 
   private
