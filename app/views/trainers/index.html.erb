@@ -20,7 +20,7 @@
         </thead>
 
         <tbody>
-          <% @trainers.each do |trainer| %>
+          <% @trainers.order(:name, id: :asc).each do |trainer| %>
             <tr>
               <td><%= link_to trainer.full_name, trainer %></td>
               <td><%= link_to 'Modify', edit_trainer_path(trainer) %></td>

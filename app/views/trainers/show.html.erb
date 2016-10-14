@@ -22,7 +22,7 @@
         </thead>
 
         <tbody>
-          <% @trainer.tokimons.each do |tokimon| %>
+          <% @trainer.tokimons.order(:name, id: :asc).each do |tokimon| %>
             <tr>
               <td><%= link_to tokimon.full_name, tokimon %></td>
               <td><%= link_to 'Mutate', edit_tokimon_path(tokimon) %></td>

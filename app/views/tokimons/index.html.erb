@@ -19,7 +19,7 @@
         </thead>
 
         <tbody>
-          <% @tokimons.each do |tokimon| %>
+          <% @tokimons.order(:name, id: :asc).each do |tokimon| %>
             <tr>
               <td><%= link_to tokimon.full_name, tokimon %></td>  
               <td><%= link_to Trainer.find(tokimon.trainer_id).full_name, Trainer.find(tokimon.trainer_id) %></td>
