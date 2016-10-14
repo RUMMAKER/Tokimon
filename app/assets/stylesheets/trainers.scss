@@ -26,6 +26,12 @@ th, td {
 	width: 12em;
 }
 
+a:link,
+a:visited,
+a:hover {
+	color: blue;
+}
+
 #top_bar a:link,
 #top_bar a:visited,
 #top_bar a:hover {
