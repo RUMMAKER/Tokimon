@@ -15,7 +15,6 @@
         <thead>
           <tr>
             <th>Name</th>
-            <th>View</th>
             <th>Mutate</th>
             <th>Send to attack</th>
             <th><%= link_to 'New Tokimon', new_tokimon_path(:id => @trainer.id) %></th>
@@ -25,8 +24,7 @@
         <tbody>
           <% @trainer.tokimons.each do |tokimon| %>
             <tr>
-              <td><%= tokimon.name %></td>
-              <td><%= link_to 'View', tokimon %></td>
+              <td><%= link_to tokimon.full_name, tokimon %></td>
               <td><%= link_to 'Mutate', edit_tokimon_path(tokimon) %></td>
               <td>
                 <%= form_tag({ controller: 'trainers', action: 'attack' }, method: 'post') do %>

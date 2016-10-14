@@ -6,7 +6,7 @@
 <body>
   <div>
   <div id="big_container">
-  <p id="page_title">Listing Tokimons</p>
+  <p id="page_title">Listing Tokimons</p><p>*Number besides names are used to distinguish tokimons with the same name*</p>
     <div id="app_container">
       <p class="red_title">Tokimons In Captivity</p>
       <table>
@@ -14,17 +14,15 @@
         <thead>
           <tr>
             <th>Name</th>
-            <th>Trainer</th>
-            <th>View</th>
+            <th>Belongs To</th>
           </tr>
         </thead>
 
         <tbody>
           <% @tokimons.each do |tokimon| %>
             <tr>
-              <td><%= tokimon.name %></td>  
-              <td><%= link_to Trainer.find(tokimon.trainer_id).name + ' (' + Trainer.find(tokimon.trainer_id).id.to_s + ')', Trainer.find(tokimon.trainer_id) %></td>
-              <td><%= link_to 'View Tokimon', tokimon %></td>
+              <td><%= link_to tokimon.full_name, tokimon %></td>  
+              <td><%= link_to Trainer.find(tokimon.trainer_id).full_name, Trainer.find(tokimon.trainer_id) %></td>
             </tr>
           <% end %>
         </tbody>

@@ -8,4 +8,7 @@ class Tokimon < ActiveRecord::Base
 	validates_inclusion_of :water, allow_blank: true, in: 0..100, message: 'water must be between [0,100]'
 	validates_inclusion_of :electric, allow_blank: true, in: 0..100, message: 'electric must be between [0,100]'
 	validates_inclusion_of :ice, allow_blank: true, in: 0..100, message: 'ice must be between [0,100]'
+	def full_name
+		"#{name} (#{id})"
+	end
 end

@@ -4,7 +4,6 @@
 html, body {
 	margin: 0 !important;
     background-color: #a30026;
-    padding-left: 1.5em;
 }
 
 table, th, td {
@@ -34,8 +33,9 @@ th, td {
 }
 
 #top_bar {
+	display: block;
+	margin:0 auto;
 	min-width: 49em;
-	float: left;
 	width: 90%;
 	height: 2em;
 	background-color: #333333;
@@ -43,8 +43,9 @@ th, td {
 	padding-top: 0.3em;
 }
 #bot_bar {
+	display: block;
+	margin:0 auto;
 	min-width: 49em;
-	float: left;
 	width: 90%;
 	height: 1em;
 	background-color: #333333;
@@ -52,8 +53,9 @@ th, td {
 }
 
 #big_container {
+	display: block;
+	margin:0 auto;
 	min-width: 49em;
-	float: left;
 	width: 90%;
 	padding: 1em;
 	background-color: white;
@@ -61,7 +63,6 @@ th, td {
 
 #app_container {
 	padding: 0.5em;
-	float: left;
 	background-color: #dce8e5; /*light green-blue */
 }
 
@@ -78,61 +79,4 @@ th, td {
 	font-size: 1.4em;
 	font-style: bold;
 	color: #a30026;
-}
-
-#app_description {
-	text-align: left;
-	font-family: Arial;
-	font-size: 1em;
-}
-
-#answer {
-	color: #a30026;
-	font-family: Arial;
-	font-size: 2em;
-	margin-top: 0em;
-}
-
-#answer_div {
-	height: 2em;
-	width: 100%;
-	display: inline-block;
-}
-
-.left {
-	float: left;
-}
-
-.right {
-	float: right;
-}
-
-
-
-.result_button {
-	margin-left: 0.5em;
-	margin-right: 0.5em;
-	float:right;
-	background-color: #a30026; /* dark red */
-    border: none;
-    color: white;
-    padding: 0.5em 0.5em;
-    width: 7em;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1em;
-    border-radius: 0.2em;
-}
-
-.add_button {
-	width: 1.3em;
-	height: 1.3em;
-	float: right;
-	background-color: #a30026; /* dark red */
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1em;
-    border-radius: 0.2em;
 }

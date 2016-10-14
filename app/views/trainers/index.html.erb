@@ -6,7 +6,7 @@
 <body>
   <div>
   <div id="big_container">
-  <p id="page_title">Listing Trainers</p><p>*The number besides trainer names are their internal id. This is to help distinguish between two trainers with the same name*</p>
+  <p id="page_title">Listing Trainers</p><p>*Number besides names are used to distinguish trainers with the same name*</p>
     <div id="app_container">
       <p class="red_title">Trainers</p>
       <table>
@@ -14,8 +14,6 @@
         <thead>
           <tr>
             <th>Name</th>
-            <th>Level</th>
-            <th>View</th>
             <th>Modify</th>
             <th><%= link_to 'Hire New Trainer', new_trainer_path %></th>
           </tr>
@@ -24,9 +22,7 @@
         <tbody>
           <% @trainers.each do |trainer| %>
             <tr>
-              <td><%= trainer.name %> (<%= trainer.id %>)</td>
-              <td><%= trainer.level %></td>
-              <td><%= link_to 'View', trainer %></td>
+              <td><%= link_to trainer.full_name, trainer %></td>
               <td><%= link_to 'Modify', edit_trainer_path(trainer) %></td>
               <td><%= link_to 'Execute Trainer', trainer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
